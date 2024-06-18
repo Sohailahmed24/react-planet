@@ -1,0 +1,36 @@
+{
+  "name": "react-planet",
+  "version": "1.0.0",
+  "description": "This is React Project by MSA",
+  "main": "App.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sohailahmed24/react-planet.git"
+  },
+  "keywords": [],
+  "author": "MSA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sohailahmed24/react-planet/issues"
+  },
+  "homepage": "https://github.com/Sohailahmed24/react-planet#readme",
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "parcel": "^2.11.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.23.1"
+  },
+  "browserslist": [
+    "last 20 versions"
+  ]
+}
