@@ -56,7 +56,7 @@ const handleLogIn=async(e)=>{
           <div>
             <h1 className="text-gray-400">
               Don't have an account ? {" "}
-              <button onClick={() => setPageShow(false)} className="border-b-2">Register here</button>{" "}
+              <button onClick={() => setPageShow(false)} className="border-b-2 hover:text-black">Register here</button>{" "}
             </h1>
           </div>
         </div>
@@ -82,7 +82,7 @@ const handleLogIn=async(e)=>{
                 />
               </div>
               <div>
-                <button className=" rounded-lg mb-8 mt-4 py-1 bg-gray-200 px-[17%]" onClick={handleLogIn}>
+                <button className=" rounded-lg mb-8 mt-4 py-1 hover:bg-rose-600 bg-gray-200 px-[17%]" onClick={handleLogIn}>
                   Sign In
                 </button>
               </div>

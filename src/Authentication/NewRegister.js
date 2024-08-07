@@ -59,7 +59,7 @@ const NewRegister=({setPageShow,onClose})=>{
                      <h1 className="font-bold text-black">Register for Food</h1>
                 </div>
                 <div>
-                    <h1>Already have an account ? <button onClick={()=>setPageShow(true)} className="border-b-2">Sign In</button> </h1>
+                    <h1>Already have an account ? <button onClick={()=>setPageShow(true)} className="border-b-2 hover:text-black">Sign In</button> </h1>
                 </div>
             </div>
         
@@ -96,8 +96,8 @@ const NewRegister=({setPageShow,onClose})=>{
                 </div>
               </div>
               <div>
-                <button onClick={handleSubmit} className=" rounded-lg mb-8 mt-4 py-1 bg-gray-200 px-[17%]" >
-                  Sign In
+                <button onClick={handleSubmit} className=" rounded-lg mb-8 mt-4 py-1 hover:bg-rose-600 bg-gray-200 px-[17%]" >
+                  Sign Up
                 </button>
               </div>
               <div className="mb-8">
