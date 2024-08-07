@@ -1,6 +1,6 @@
 import { createSearchParams, Link, useNavigate } from "react-router-dom"
 import { IMG_offers, IMG_Order, IMG_URL, LOGO_URL } from "../utils/constants"
-import useOnlineStatus from "../utils/useonlineStatus"
+import useOnlineStatus from "../utils/useOnlineStatus"
 
 import { useCallback,  useMemo, useState } from "react"
 
