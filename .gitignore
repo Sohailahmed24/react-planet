@@ -2,3 +2,65 @@
 /dist
 .parcel-cache
 /apiSw
+.env
+/src/api/restaurantRadioSearchApi.js
+/src/app/restaurantCheckBoxSearchSlice.js
+/src/app/restaurantSearch2Slice.js
+/src/components/RestaurantFilter.js
+/src/components/RestaurantDetails.js
+/src/components/PrecticeComponent.js
+/src/components/RatioSearch.js
+/src/components/PreSearch.js
+/src/Authentication/Register.js
+/src/Authentication/Login.js
+src/Authentication/User.js
+src/app/UserProfile.js
+src/components/CardModal.js
+src/components/NavSort.js
+src/components/oldNave.js
+src/components/newNav.js
+src/components/Scroller.js
+src/app/SignUp.js
+src/components/HorizontalInfiniteScroll.js
+src/utils/useRestaurantDetails.js
+src/components/RestDetails.js
+src/components/BannerComponent.js
+# System and IDE Files
+.DS_Store                  # macOS system files
+*.sublime*                  # Sublime Text project files
+.vscode/                    # Visual Studio Code settings
+
+# Log Files
+*.log                       # Log files
+logs/                       # Log directory
+
+# Backup Files
+**/*.backup.*               # Backup files with various extensions
+**/*.back.*                 # Backup files with various extensions
+
+# Node and Bower Modules
+node_modules/               # Node.js dependencies
+bower_components/           # Bower dependencies (if used)
+
+# Build and Temporary Files
+dist/                       # Build outputs
+build/                      # Build outputs
+tmp/                        # Temporary files
+*.tmp                       # Temporary files with .tmp extension
+
+# Environment Configuration Files
+.env                        # Environment variables configuration file
+
+# Design Files
+psd/                        # Photoshop files
+thumb/                      # Thumbnail images
+sketch/                     # Sketch files
+
+# Firebase
+.firebase/                  # Firebase-related files
+
+# Miscellaneous
+*.swp                       # Swap files (from editors like Vim)
+*.swo                       # Swap files (from editors like Vim)
+*.idea/                     # IntelliJ IDEA project files
+

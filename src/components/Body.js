@@ -1,76 +1,96 @@
-import { useEffect, useState } from "react"
-import resList from "../utils/mockData"
+import { useEffect, useMemo, useState } from "react"
 import RestaurantCard from "./RestaurantCard"
-import axios from "axios"
 import Shimmer from "./Shimmer"
 
 
+import { Link } from "react-router-dom"
+import useOnlineStatus from "../utils/useonlineStatus"
+import { useDispatch, useSelector } from "react-redux"
+import { fetchAsync } from "../app/restaurantSlice"
+import SearchComponent from "./SearchComponent"
+
+
+import { Cookies, useCookies } from "react-cookie"
+import { logInUser } from "../app/userSlice"
+import useScrollerInfinte from "./useScrollerInfinte"
+
+
 const Body=()=>{
-    const [cardData,setCardData]=useState([])
-    const [filterName,setFilterName]=useState(true)
-    const [inputTxt,setInputTxt]=useState()
-    const [filterRestaurent,setFilterRestaurent]=useState([])
+ 
+  const {initialObj:data,status:pending}=useSelector(state=>state.restaurants)
+  const [cookies,setCookies,removeCookies]=useCookies(["userDetails"])
+
+  const dispatch = useDispatch()
+     const status=useOnlineStatus()
 
     useEffect(()=>{
-    //  fetchApi()
-      getData()
+     dispatch(fetchAsync())
+
     },[])
-
-    const handleFilterBtn=()=>{
-       if(filterName === true){
-        const data=resList.filter(item=> item.data.avgRating >4)
-        setCardData(data)
-        setFilterName(!filterName)
-       }else{
-        setCardData(resList)
-        setFilterName(!filterName)
-       }
-    }
-    const handleFilterAll=()=>{
-        setCardData(resList)
-    }
-  /*   const fetchApi= async()=>{
-      const data=await fetch("https://food.noon.com/_svc/mp-food-api-catalog/api/")
-      const json=await data.json()
-    //   console.log(json)
-    } */
-    const getData = async ()=>{
-       const {data}= await axios.get("https://food.noon.com/_svc/mp-food-api-catalog/api/")
-       
-       const filter=data.results.filter(item=> item.type === "outlet")
+   
+      useEffect(()=>{
+        if(cookies.userDetails){
+            dispatch(logInUser(cookies.userDetails))
+        }
+       },[cookies,dispatch])
       
+        const newResult=useScrollerInfinte(data)
       
-       setCardData(filter)
-       setFilterRestaurent(filter)
+         const filteredRestaurants = useMemo(() => {
+    console.log("Starting filter time measurement");
+    console.time("filter time");
+    const result = data?.results?.filter((item) => item.type === "outlet");
+    
+   
+    return result;
+  }, [data]);
+      
+
+   if(status === false) return (
+    <div>
+      <h1 className="text-red-900">Looks like you're offline !! please check your internet connection OR Internet loss</h1>
+    </div>
+   )
+    if(pending === "loading"){
+     return (
+     <>
+     
+      <Shimmer/>
+     </>
+     )
     }
-
- const handleSearchFilter=()=>{
-      const result=cardData.filter(item=>item.name.toUpperCase().includes(inputTxt.toUpperCase()))
-      setFilterRestaurent(result)
- }
-
-    if(cardData.length === 0){
-     return  <Shimmer />
-    }
-
+ 
 
 
     return(
-      <div className="body">  
-        <div className="filter">
-           <div>
-              <input value={inputTxt} onChange={(e)=>setInputTxt(e.target.value)} />
-              <button onClick={handleSearchFilter}>Search</button>
-           </div>
-                <button className="filter-all" onClick={handleFilterAll}>All Restaurant</button>
-                <button className="filter-btn" onClick={handleFilterBtn}>{(filterName === true)?"Top Restaurant":"All"}</button>
-        </div>
-           <div className="restaurant-Container">
+      <div className=" body">   
+     
+     <div >
+ 
+       <SearchComponent/>
+     </div>
+           <div className="flex flex-wrap group:">
+            
             {
-              filterRestaurent.map(item=> <RestaurantCard   resData={item} />)
+                newResult?.map(item=> <>
+               
+                   <Link to={"/outlet/"+item.outletCode} key={item.restaurantCode} >
+                                  <RestaurantCard   resData={item} />
+                    </Link>
+                </>)
             }
                
            </div>
+
+
+           <div>
+
+
+
+           </div>
+
+
+
       </div>
     )
   }

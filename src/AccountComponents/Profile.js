@@ -14,14 +14,14 @@ const Profile=()=>{
     const [showModal,setShowModal]=useState(false)
     const [isDisible,setIsDisible]=useState(true)
     const dispatch=useDispatch()
-   console.log(user)
+   
 useEffect(()=>{
     setupdateUserDetails(user)
 },[])
 
   const handleName=(e)=>{
     setIsDisible(false)
-   // setupdateUserDetails(prev=>({...prev,[e.target.name]:e.target.value}))
+ 
    setupdateUserDetails({...updateUserDetails,[e.target.name]:e.target.value})
   }
 
@@ -77,7 +77,7 @@ useEffect(()=>{
                    
                 </div>
                 <div>
-                    <button onClick={()=>setShowModal(true)} className="border-2 border-gray-400 py-1 px-5" >Change Password</button>
+                    <button onClick={()=>setShowModal(true)} className="border-2 border-gray-400 py-1 px-5 hover:bg-rose-600" >Change Password</button>
                    </div>
                 <UpdatePassword isVisible={showModal} onClose={()=>setShowModal(false)} />
             </div>

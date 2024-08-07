@@ -19,10 +19,11 @@ import PaymentCards from "./AccountComponents/PaymentCards";
 import AddressBook from "./AccountComponents/AddressBook";
 import NoonCredits from "./AccountComponents/NoonCredits";
 import { store } from "./app/store";
+import Footer from "./components/Footer";
 
 
 
-/* const RestaurantDetails= lazy(()=> import("./components/RestaurantDetails")) */
+
 
 const AppLayout = () => {
   const location=useLocation()
@@ -36,11 +37,15 @@ const AppLayout = () => {
     <div className="app">
            <Provider store={store}>
                     <CookiesProvider>
-                              <Header />
+                       <div className="flex flex-col">
+                                 <div className="bg-gray-50">
+                                      <Header />
+                                 </div>
+                             
                         <div className="flex">
                              {                    !url.includes("/outlet") && !url.includes("/Account") &&(
                                      <div className="w-[400px] px-[100px] m-6 bg-gray-100">
-                                          <NavSearchFacets />
+                                            <NavSearchFacets />
                                      </div>
                               )
                              }
@@ -48,7 +53,12 @@ const AppLayout = () => {
                                      <div>
                                             <Outlet />
                                     </div>
+                                    
                         </div>
+                                   <footer className="fixed bottom-0 flex mx-5 py-2 w-screen bg-rose-600">
+                                             <Footer/>
+                                    </footer>
+                         </div>         
                     </CookiesProvider>
              </Provider>
     </div>
