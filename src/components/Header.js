@@ -19,7 +19,7 @@ const Header=()=>{
    
    const [pageShow,setPageShow]=useState(true)
    const dispatch=useDispatch()
-   const status=useOnlineStatus
+   const status=useOnlineStatus()
    const [showModal,setShowModal]=useState(false)
    const [showDiv,setShowDiv]=useState(false)
    const [inputText,setInputText]=useState("")
