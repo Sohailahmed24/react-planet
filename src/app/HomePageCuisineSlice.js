@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import {  HomePageCuisineAPI } from "../api/HomePageCuisineAPI";
+import homePageCuisineApi from "../api/HomePageCuisineAPI";
+
  
 
 const initialState={
@@ -15,7 +16,7 @@ export  const fetchHomePageCuisine=createAsyncThunk(
     async(url,{rejectWithValue})=>{
        try{
        
-        const {data} = await  HomePageCuisineAPI(url);
+        const {data} = await  homePageCuisineApi(url);
       
        return data
        }
