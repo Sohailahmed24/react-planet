@@ -1,6 +1,6 @@
 import { createSearchParams, Link, useNavigate } from "react-router-dom"
 import { IMG_offers, IMG_Order, IMG_URL, LOGO_URL } from "../utils/constants"
-import useOnlineStatus from "../utils/useOnlineStatus"
+
 
 import { useCallback,  useMemo, useState } from "react"
 
@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux"
 import Modal from "../Authentication/Modal"
 import { fetchSearchCard } from "../app/SearchCardSlice"
 import SearchCard from "./SerachCard"
+import useOnlineStatus from "../utils/useOnlineStatus"
 
 
 const Header=()=>{
@@ -18,7 +19,7 @@ const Header=()=>{
    
    const [pageShow,setPageShow]=useState(true)
    const dispatch=useDispatch()
-   const status=useOnlineStatus()
+   const status=useOnlineStatus
    const [showModal,setShowModal]=useState(false)
    const [showDiv,setShowDiv]=useState(false)
    const [inputText,setInputText]=useState("")
