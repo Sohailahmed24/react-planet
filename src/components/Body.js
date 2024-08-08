@@ -3,8 +3,8 @@ import RestaurantCard from "./RestaurantCard"
 import Shimmer from "./Shimmer"
 
 
-import { Link } from "react-router-dom"
-import useOnlineStatus from "../utils/useonlineStatus"
+import { Link } from "react-router-dom";
+
 import { useDispatch, useSelector } from "react-redux"
 import { fetchAsync } from "../app/restaurantSlice"
 import SearchComponent from "./SearchComponent"
@@ -13,6 +13,7 @@ import SearchComponent from "./SearchComponent"
 import { Cookies, useCookies } from "react-cookie"
 import { logInUser } from "../app/userSlice"
 import useScrollerInfinte from "./useScrollerInfinte"
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 const Body=()=>{

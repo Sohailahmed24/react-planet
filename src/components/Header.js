@@ -13,9 +13,8 @@ import useOnlineStatus from "../utils/useOnlineStatus"
 
 
 const Header=()=>{
-  
 
-     const user=useSelector(state=>state.user.user)
+  const user=useSelector(state=>state.user.user)
    
    const [pageShow,setPageShow]=useState(true)
    const dispatch=useDispatch()
