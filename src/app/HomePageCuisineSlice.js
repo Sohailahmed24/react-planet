@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import homePageCuisineApi from "../api/HomePageCuisineAPI";
+import homePageCuisineApi from "../api/HomePageCuisineApi";
 
 
  
