@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { homePageCuisineAPI, PageCuisineAPI } from "../api/HomePageCuisineAPI";
+import {  PageCuisineAPI } from "../api/HomePageCuisineAPI";
 
 const initialState={
     status:"idle",

@@ -25,6 +25,7 @@ src/components/HorizontalInfiniteScroll.js
 src/utils/useRestaurantDetails.js
 src/components/RestDetails.js
 src/components/BannerComponent.js
+
 # System and IDE Files
 .DS_Store                  # macOS system files
 *.sublime*                  # Sublime Text project files

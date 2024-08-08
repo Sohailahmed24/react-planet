@@ -1,7 +1,7 @@
 import {  useSelector } from "react-redux"
-import RestaurantCard from "./RestaurantCard";
+
 import { IMG_THUMB_UP2, IMG_URL } from "../utils/constants";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo} from "react";
 import { Link } from "react-router-dom";
 
 
