@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { restaurantSearchFetchAPI } from "../api/resatarantSearchFetchAPI";
 
-initialState={
+const initialState={
     status:"idle",
     restaurantSearchObj:{},
     error:null
