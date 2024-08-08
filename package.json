@@ -2,7 +2,7 @@
   "name": "react-planet",
   "version": "1.0.0",
   "description": "This is React Project by MSA",
-  "main": "index.html",
+  
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
