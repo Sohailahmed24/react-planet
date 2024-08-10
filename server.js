@@ -9,7 +9,7 @@ dotenv.config();
 
 const app = express();
 const corsOptions = {
-    origin: 'http://localhost:1234',
+    origin: ['http://localhost:1234',process.env.VERCEL_URL],
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Addresskey', 'X-Content', 'X-Experience', 'X-Lat', 'X-Lng', 'X-Locale', 'X-Mp', 'X-Platform', 'X-Visitor-Id'],
     credentials: true
@@ -23,7 +23,7 @@ app.use('/', (req, res) => {
 });
 
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
+app.listen(PORT,`0.0.0.0`, () => {
     console.log(`CORS proxy server running on port ${PORT}`);
 });  
 
