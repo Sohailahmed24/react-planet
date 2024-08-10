@@ -17,7 +17,7 @@ import axios from "axios"
 } */ 
     export const fetchRestaurantCard = async (outletCode) => {
         // Use the environment variable or fallback to localhost for development
-        const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8080';
+        const apiUrl = process.env.VERCEL_URL || 'http://localhost:8080';
         const url = `${apiUrl}/https://food.noon.com/_svc/mp-food-api-mpnoon/consumer/restaurant/outlet/details/guest`;
     
         return await axios.post(url, {
