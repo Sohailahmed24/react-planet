@@ -27,7 +27,7 @@ const RestaurantCard=({resData})=>{
    }
       return(
 
-    <section  className=" h-screen flex justify-center rounded-lg m-4 items-center gap-x-16 text-white" >
+    <section  className="  flex justify-center  rounded-lg m-4 items-center gap-x-16 text-white" >
       <div className="w-[280px] h-[320px] bg-transparent cursor-pointer group perspective rounded-lg">
         <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000 rounded-lg" >
           <div className="absolute backface-hidden border-2 w-full h-full text-center rounded-lg">
