@@ -100,7 +100,7 @@ const bannerSection=useMemo(()=>{
         <>
 
        <div >
-       <div className=" flex overflow-scroll no-Scrollbar w-[950px]     ">
+       <div className=" flex overflow-scroll  no-Scrollbar w-[950px]     ">
           {
         
              bannerSection.topBanners?.map(item=>
@@ -119,7 +119,7 @@ const bannerSection=useMemo(()=>{
       {
      
           bannerSection.upStileBanners?.map(item=>
-                    <img src={item?.imageUrl} alt={item.imageUrl} className="scroller_inner w-[150px] hover:scale-[1.2] duration-500" onClick={()=>handleHomePageUsptile(item.linkUrl)} />
+                    <img src={item?.imageUrl} alt={item.imageUrl} className="scroller_inner w-[150px] hover:scale-[1.2] mx-4 duration-500" onClick={()=>handleHomePageUsptile(item.linkUrl)} />
          )  
        
       }
@@ -130,7 +130,7 @@ const bannerSection=useMemo(()=>{
       {
     
          bannerSection.cuisineBanners?.map(item=>
-                <div className="m-4    hover:cursor-pointer hover:scale-[1.2] duration-500 py-6 mr-[8px] " >
+                <div className="m-4 hover:cursor-pointer hover:scale-[1.2] duration-500 py-6 mr-[8px] " >
            
                        <img src={item?.imageUrl} alt={item.imageUrl} className="mr-[100px] py-3" onClick={()=>handleHomePageCuisine(item.linkUrl)} />
          
