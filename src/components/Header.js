@@ -10,6 +10,7 @@ import Modal from "../Authentication/Modal"
 import { fetchSearchCard } from "../app/SearchCardSlice"
 import SearchCard from "./SerachCard"
 import useOnlineStatus from "../utils/useOnlineStatus"
+import ApiPrectice from "./ApiPrectice"
 
 
 const Header=()=>{
@@ -129,6 +130,9 @@ const Header=()=>{
         <li>
           <button onClick={handleLogin} className="px-4  hover:bg-rose-600 rounded-lg">Register</button>
         </li>
+        <div>
+          <ApiPrectice/>
+        </div>
       </>
     );
    },[user, handleHomeOffers, handleAccount, handleSignIn, handleLogin])
