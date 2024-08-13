@@ -19,7 +19,8 @@ app.use(cors(corsOptions));
 
 app.use('/', (req, res) => {
     const url = req.url.substring(1);
-    req.pipe(request(url)).pipe(res);
+    const fullUrl = url.startsWith('http') ? url : `https://${url}`;  // Ensure correct protocol is used
+    req.pipe(request(fullUrl)).pipe(res);
 });
 
 const PORT = process.env.PORT || 8080;
