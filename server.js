@@ -9,7 +9,7 @@ dotenv.config();
 
 const app = express();
 const corsOptions = {
-     origin: ['http://localhost:1234',process.env.VERCEL_URL], 
+     origin:'http://localhost:1234', 
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Addresskey', 'X-Content', 'X-Experience', 'X-Lat', 'X-Lng', 'X-Locale', 'X-Mp', 'X-Platform', 'X-Visitor-Id'],
     credentials: true
